@@ -1,0 +1,6 @@
+debian/pharo-resources/usr/share/icons/hicolor/16x16/apps/pharo.png
+debian/pharo-resources/usr/share/icons/hicolor/256x256/apps/pharo.png
+debian/pharo-resources/usr/share/icons/hicolor/32x32/apps/pharo.png
+debian/pharo-resources/usr/share/icons/hicolor/48x48/apps/pharo.png
+debian/pharo-resources/usr/share/pharo-vm/PharoV10.sources
+debian/pharo-resources/usr/share/pharo-vm/PharoV20.sources

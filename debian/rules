@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE=1
+export DH_OPTIONS=-v
+
+%:
+	dh $@ -v --buildsystem=cmake --source-directory=build --build-directory=results
+
+override_dh_auto_configure:
+	cd build && cmake .
+
+override_dh_auto_build:
+	cd build && make -j 8
+	cd results && chmod -x vm-*
+	cd results && strip *
+
+override_dh_install:
+	mkdir -p debian/pharo-vm/usr/lib/pharo-vm
+	cp -R results/* debian/pharo-vm/usr/lib/pharo-vm/
+	cd debian && cp -R pharo-resources/usr pharo-vm/
+
+#DEBHELPER#

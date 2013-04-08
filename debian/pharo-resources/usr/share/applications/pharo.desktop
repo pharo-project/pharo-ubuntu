@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Pharo
+GenericName=Smalltalk Virtual Machine
+Exec=pharo %F
+Icon=pharo
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Application;Development;
+MimeType=application/x-pharo-image;
