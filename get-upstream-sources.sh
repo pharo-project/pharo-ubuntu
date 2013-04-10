@@ -49,7 +49,7 @@ function create_source_package() {
     tar cfz ${PACKAGE_NAME}_${vm_version}.orig.tar.gz ${PACKAGE_NAME}-${vm_version}
 }
 
-# download_sources
+download_sources
 extract_sources
 if source_package_already_present; then
     echo "Source package already present"
