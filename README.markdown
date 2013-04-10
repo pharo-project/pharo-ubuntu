@@ -1,8 +1,18 @@
 debian/ directory and scripts for building pharo-vm packages for Ubuntu.
 
+To download and create the debian files:
+
 ```bash
 git clone git://github.com/pharo-project/pharo-vm-ubuntu.git
 cd pharo-vm-ubuntu/
 ./get-upstream-sources.sh
 ./build-debian-package.sh 2013.03.20 1 quantal
+```
+
+If you want to build the package on your own computer, you might like
+`pbuilder`:
+
+```bash
+sudo pbuilder create --debootstrapopts --variant=buildd --distribution quantal
+sudo pbuilder build pharo-vm_2013.03.20-1~ppa1~quantal1.dsc
 ```
