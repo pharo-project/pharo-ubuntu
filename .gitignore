@@ -1,2 +1,4 @@
 cog
 /sources.tar.gz
+/pharo-vm-2013.*
+*.tar.gz
