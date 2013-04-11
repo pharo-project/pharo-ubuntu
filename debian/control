@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 7), libssl-dev, libfreetype6-dev, libsm-dev, libice
 
 Package: pharo-vm
 Architecture: i386
-Depends: ${shlibs:Depends}, ${misc:Depends}, openssl
+Depends: ${shlibs:Depends}, ${misc:Depends}, libssl1.0.0
 Description: A clean and innovative Smalltalk-inspired environment.
  Pharo's goal is to deliver a clean, innovative, free open-source
  Smalltalk-inspired environment. By providing a stable and small core
