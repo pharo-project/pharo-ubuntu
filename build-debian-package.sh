@@ -43,7 +43,7 @@ function build() {
     #       -sd    Forces the exclusion of the original source and includes only the diff.
     #       -us    Do not sign the source package.
     #       -uc    Do not sign the .changes file.
-    #       -B     Specifies a binary-only build, limited to architecture dependent packages.  Passed to dpkg-genchanges.
+    #       -b     Specifies a binary-only build, limited to architecture dependent packages.  Passed to dpkg-genchanges.
     #       -S     Specifies a source-only build, no binary packages need to be made.  Passed to dpkg-genchanges.
 
     if [ $want_to_package_sources -eq 0 ]; then
@@ -53,7 +53,7 @@ function build() {
     fi
 
     # echo "Create a binary package for immediate installation"
-    # debuild -b ${upload_sources} -uc -sa #  --changes-option='-DDistribution=${distribution}'
+    # debuild -b ${upload_sources} -uc -us --changes-option="-DDistribution=${distribution}"
 
     echo "Create a source package to delegate the build (to PPA for example)"
     debuild -S ${upload_sources} --changes-option="-DDistribution=${distribution}"
