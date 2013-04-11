@@ -17,7 +17,7 @@ override_dh_auto_build:
 override_dh_install:
 	mkdir -p debian/pharo-vm/usr/lib/pharo-vm
 	mv results/vm-display-null results/vm-display-null.so
-	mv results/vm-display-X11 results/vm-display-null.so
+	mv results/vm-display-X11 results/vm-display-X11.so
 	mv results/vm-sound-null results/vm-sound-null.so
 	mv results/vm-sound-ALSA results/vm-sound-ALSA.so
 	cp -R results/* debian/pharo-vm/usr/lib/pharo-vm/
