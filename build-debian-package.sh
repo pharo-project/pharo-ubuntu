@@ -28,6 +28,7 @@ function build() {
     package_version="$2"
     distribution="$3"
     want_to_package_sources="$4"
+    want_source_package="$5"
 
     echo "Copy debian/ directory to source package"
     root_directory="${PACKAGE_NAME}-${upstream_version}/"
@@ -52,11 +53,14 @@ function build() {
         upload_sources="-sd"
     fi
 
-    # echo "Create a binary package for immediate installation"
-    # debuild -b ${upload_sources} -uc -us --changes-option="-DDistribution=${distribution}"
+    if [ $want_source_package -eq 0 ]; then
+        echo "Create a source package to delegate the build (to PPA for example)"
+        debuild -S ${upload_sources} --changes-option="-DDistribution=${distribution}"
+    else
+        echo "Create a binary package for immediate installation"
+        debuild -b ${upload_sources} -uc -us --changes-option="-DDistribution=${distribution}"
+    fi
 
-    echo "Create a source package to delegate the build (to PPA for example)"
-    debuild -S ${upload_sources} --changes-option="-DDistribution=${distribution}"
     cd ..
 }
 
@@ -71,14 +75,25 @@ else
 
     # Ask questions early in the process
 
-    confirm "Do you want to upload the source package as well?"
-    want_to_package_sources=$?
+    confirm "Do you want to build a source-only package?"
+    want_source_package=$?
 
-    confirm "Do you want to upload the resulting debian package to PPA?"
-    want_ppa_upload=$?
+    if [ $want_source_package -eq 0 ]; then
+        # We want a source package, we may want to upload it as well
+
+        confirm "Do you want to include the source package as well?"
+        want_to_package_sources=$?
+
+        confirm "Do you want to upload the resulting debian package to PPA?"
+        want_ppa_upload=$?
+    else
+        # We want a binary build, this one can't be uploaded to a PPA
+        want_to_package_sources=1
+        want_ppa_upload=1
+    fi
 
     extract_source_package $upstream_version
-    build $upstream_version $package_version $distribution $want_to_package_sources
+    build $upstream_version $package_version $distribution $want_to_package_sources $want_source_package
 
     if [ $want_ppa_upload -eq 0 ]; then
         dput ppa:cassou/pharo ${PACKAGE_NAME}_${upstream_version}-${package_version}~ppa1~${distribution}1_source.changes
