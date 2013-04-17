@@ -2,9 +2,6 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: pharo-vm
 Source: http://pharo-project.org/
 
-Pharo is licensed under the MIT License with parts under the Apache
-License.
-
 Files: *
 Copyright: Copyright (c) Pharo Project, and Contributors Copyright (c)
  1996-2008 Viewpoints Research Institute, and Contributors Copyright
