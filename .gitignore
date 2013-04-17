@@ -2,3 +2,4 @@ cog
 /sources.tar.gz
 /pharo-vm-2013.*
 /pharo-vm_2013.*
+*.deb
