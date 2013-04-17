@@ -2,20 +2,6 @@
 
 PACKAGE_NAME=pharo-vm
 
-# if confirm "Do you want to do that?"; then
-#   ...
-# fi
-function confirm {
-    read -p "$1 (Y/n) " answer
-    answer=${answer:-"Y"}
-    if [ "$answer" = "Y" ]; then
-        return 0;
-    else
-        return 1;
-    fi
-}
-
-
 function extract_source_package() {
     upstream_version="$1"
     echo "Extract ${PACKAGE_NAME}_${upstream_version}.orig.tar.gz"
@@ -64,38 +50,60 @@ function build() {
     cd ..
 }
 
+function usage() {
+    echo "Usage: $0 <upstream_version> <package_version> <distribution> [OPTIONS]"
+    echo "Create the *.deb files"
+    echo ""
+    echo -e "  --binary\t if you want to build the package locally"
+    echo -e "  --upload\t if you want to upload to the PPA"
+    echo -e "          \t    (incompatible with --binary)"
+    echo -e "  --no-sources\t if you already uploaded the orig.tar.gz package"
+}
+
 upstream_version=$1
 package_version=$2
 distribution=$3
 
+shift 3
+
 if [ -z "$upstream_version" -o -z "$package_version" -o -z "$distribution" ]; then
-    echo "$0 <upstream_version> <package_version> <distribution>"
+    usage
     exit 1
-else
+fi
 
-    # Ask questions early in the process
+want_source_package=0
+want_ppa_upload=1
+want_to_package_sources=0
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -h|--help)
+            usage
+            exit 0
+            ;;
+        --binary)
+            want_source_package=1
+            want_ppa_upload=1
+            want_to_package_sources=1
+            ;;
+        --upload)
+            want_ppa_upload=0
+            ;;
+        --no-sources)
+            want_to_package_sources=1
+            ;;
+        *)
+            echo "Unknown option: " $1
+            usage
+            exit 1
+            ;;
+    esac
+    shift
+done
 
-    confirm "Do you want to build a source-only package?"
-    want_source_package=$?
 
-    if [ $want_source_package -eq 0 ]; then
-        # We want a source package, we may want to upload it as well
+extract_source_package $upstream_version
+build $upstream_version $package_version $distribution $want_to_package_sources $want_source_package
 
-        confirm "Do you want to include the source package as well?"
-        want_to_package_sources=$?
-
-        confirm "Do you want to upload the resulting debian package to PPA?"
-        want_ppa_upload=$?
-    else
-        # We want a binary build, this one can't be uploaded to a PPA
-        want_to_package_sources=1
-        want_ppa_upload=1
-    fi
-
-    extract_source_package $upstream_version
-    build $upstream_version $package_version $distribution $want_to_package_sources $want_source_package
-
-    if [ $want_ppa_upload -eq 0 ]; then
-        dput ppa:cassou/pharo ${PACKAGE_NAME}_${upstream_version}-${package_version}~ppa1~${distribution}1_source.changes
-    fi
+if [ $want_ppa_upload -eq 0 ]; then
+    dput ppa:cassou/pharo ${PACKAGE_NAME}_${upstream_version}-${package_version}~ppa1~${distribution}1_source.changes
 fi
