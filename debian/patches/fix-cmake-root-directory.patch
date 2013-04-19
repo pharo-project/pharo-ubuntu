@@ -25,7 +25,7 @@ Subject: Fix use of absolute paths in cmake files
 -set(buildDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/build")
 +set(topDir "${CMAKE_SOURCE_DIR}/..")
 +set(buildDir "${CMAKE_SOURCE_DIR}/../build")
- set(thirdpartyDir "${buildDir}/thirdparty")
+ set(thirdpartyDir "${buildDir}/thirdParty")
 -set(platformsDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/platforms")
 -set(srcDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/src")
 +set(platformsDir "${CMAKE_SOURCE_DIR}/../platforms")
