@@ -4,13 +4,7 @@ export DH_VERBOSE=1
 export DH_OPTIONS=-v
 
 %:
-	dh $@ -v --buildsystem=cmake --source-directory=build --build-directory=results
-
-override_dh_auto_configure:
-	cd build && cmake .
-
-override_dh_auto_build:
-	cd build && make
+	dh $@ -v --buildsystem=cmake --sourcedirectory=build
 
 override_dh_install:
 	mv results/vm-display-null results/vm-display-null.so
