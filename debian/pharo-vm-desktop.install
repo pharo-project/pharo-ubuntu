@@ -1,0 +1,5 @@
+results/vm-display-X11.so              usr/lib/pharo-vm
+results/vm-sound-ALSA.so               usr/lib/pharo-vm
+results/libB3DAcceleratorPlugin.so     usr/lib/pharo-vm
+results/libFT2Plugin.so                usr/lib/pharo-vm
+debian/pharo-desktop-resources/usr     .

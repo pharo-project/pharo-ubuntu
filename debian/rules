@@ -13,14 +13,8 @@ override_dh_auto_build:
 	cd build && make
 
 override_dh_install:
-	mkdir -p debian/pharo-vm-core/usr/lib/pharo-vm
-	mkdir -p debian/pharo-vm-desktop/usr/lib/pharo-vm
 	mv results/vm-display-null results/vm-display-null.so
 	mv results/vm-display-X11 results/vm-display-X11.so
 	mv results/vm-sound-null results/vm-sound-null.so
 	mv results/vm-sound-ALSA results/vm-sound-ALSA.so
-	chmod -x results/*.so
-	cd results && mv pharo libInternetConfigPlugin.so libSqueakFFIPrims.so libSqueakSSL.so vm-display-null.so vm-sound-null.so ../debian/pharo-vm-core/usr/lib/pharo-vm/
-	cd results && mv libB3DAcceleratorPlugin.so libFT2Plugin.so vm-display-X11.so vm-sound-ALSA.so ../debian/pharo-vm-desktop/usr/lib/pharo-vm/
-	cd debian && cp -R pharo-core-resources/usr pharo-vm-core/
-	cd debian && cp -R pharo-desktop-resources/usr pharo-vm-desktop/
+	dh_install
