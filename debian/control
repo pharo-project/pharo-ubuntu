@@ -10,7 +10,7 @@ Package: pharo-vm-core
 Architecture: i386
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: pharo-vm-desktop
-Description: A clean and innovative Smalltalk-inspired environment.
+Description: Clean and innovative Smalltalk-inspired environment.
  Pharo's goal is to deliver a clean, innovative, free open-source
  Smalltalk-inspired environment. By providing a stable and small core
  system, excellent dev tools, and maintained releases, Pharo is an
@@ -19,11 +19,14 @@ Description: A clean and innovative Smalltalk-inspired environment.
  This package provides the Pharo Virtual Machine and is suitable for
  headless usage. For developer usage, please install the
  pharo-vm-desktop as well.
+ .
+ Please fill bug reports on http://bugs.pharo.org under the 'Ubuntu
+ packaging (ppa:cassou/pharo)' project.
 
 Package: pharo-vm-desktop
 Architecture: i386
 Depends: ${shlibs:Depends}, ${misc:Depends}, libcairo2, pharo-vm-core
-Description: A clean and innovative Smalltalk-inspired environment.
+Description: Clean and innovative Smalltalk-inspired environment.
  Pharo's goal is to deliver a clean, innovative, free open-source
  Smalltalk-inspired environment. By providing a stable and small core
  system, excellent dev tools, and maintained releases, Pharo is an
@@ -31,3 +34,6 @@ Description: A clean and innovative Smalltalk-inspired environment.
  .
  This package provides the Pharo Virtual Machine (VM) suitable for the
  developers. For headless usage, only pharo-vm-core is necessary.
+ .
+ Please fill bug reports on http://bugs.pharo.org under the 'Ubuntu
+ packaging (ppa:cassou/pharo)' project.
