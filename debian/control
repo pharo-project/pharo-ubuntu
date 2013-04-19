@@ -26,7 +26,7 @@ Description: Clean and innovative Smalltalk-inspired environment.
 Package: pharo-vm-desktop
 Architecture: i386
 Depends: ${shlibs:Depends}, ${misc:Depends}, pharo-vm-core
-Recommands: libcairo2
+Recommends: libcairo2
 Description: Clean and innovative Smalltalk-inspired environment.
  Pharo's goal is to deliver a clean, innovative, free open-source
  Smalltalk-inspired environment. By providing a stable and small core
