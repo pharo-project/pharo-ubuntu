@@ -17,8 +17,8 @@ function build() {
     want_source_package="$5"
 
     echo "Copy debian/ directory to source package"
-    root_directory="${PACKAGE_NAME}-${upstream_version}/"
-    cp -R debian "${root_directory}"
+    root_directory="${PACKAGE_NAME}-${upstream_version}"
+    cp -R debian "${root_directory}/"
     cd "${root_directory}"
 
     echo "Update changelog"
