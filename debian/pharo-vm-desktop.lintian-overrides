@@ -1,2 +1,4 @@
 # it's ok because the pharo binary is in core
 pharo-vm-desktop binary: desktop-command-not-in-package usr/share/applications/pharo.desktop pharo
+# it's ok because blhc does not report any missing flag
+pharo-vm-desktop: hardening-no-fortify-functions usr/lib/pharo-vm/libFT2Plugin.so
