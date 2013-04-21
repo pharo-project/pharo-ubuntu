@@ -1,3 +1,8 @@
+pharo-vm (2013.04.16) UNRELEASED; urgency=low
+
+  * Upstream release.
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Sun, 21 Apr 2013 17:57:39 +0200
 pharo-vm (2013.03.20) UNRELEASED; urgency=low
 
   * Initial release.
