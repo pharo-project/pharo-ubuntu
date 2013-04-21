@@ -3,4 +3,7 @@ results/pharo                           usr/lib/pharo-vm
 results/libInternetConfigPlugin.so      usr/lib/pharo-vm
 results/libSqueakFFIPrims.so            usr/lib/pharo-vm
 results/libSqueakSSL.so                 usr/lib/pharo-vm
+results/libJPEGReaderPlugin.so          usr/lib/pharo-vm
+results/libJPEGReadWriter2Plugin.so     usr/lib/pharo-vm
+results/libRePlugin.so                  usr/lib/pharo-vm
 debian/pharo-core-resources/usr         .
