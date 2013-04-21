@@ -1,0 +1,14 @@
+Make the VM compile under hardening conditions
+
+http://wiki.debian.org/Hardening
+--- a/src/vm/cogit.c
++++ b/src/vm/cogit.c
+@@ -15605,7 +15605,7 @@
+ 	for (i = 0; i <= (trampolineTableIndex - 1); i += 2) {
+ 		printHex(((sqInt)(trampolineAddresses[i + 1])));
+ 		print(": ");
+-		print(trampolineAddresses[i]);
++		printf("%s", trampolineAddresses[i]);
+ 		cr();
+ 	}
+ }
