@@ -22,7 +22,6 @@ function build() {
     cd "${root_directory}"
 
     echo "Update changelog"
-    dch --distribution ${distribution} --newversion ${upstream_version} "Upstream release"
     dch --distribution ${distribution} --local "-${package_version}~ppa1~${distribution}" "Build for ${distribution}"
 
     # Use this if you want to build a binary deb package directly
