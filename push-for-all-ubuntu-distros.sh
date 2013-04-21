@@ -46,4 +46,6 @@ fi
 
 for distro in "${distros[@]}"; do
     ./build-debian-package.sh $upstream_version $package_version $distro $sources_option --upload
+    # Once sources have been uploaded, there is no need to upload them again
+    sources_option='--no-sources'
 done
