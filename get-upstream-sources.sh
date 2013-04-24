@@ -24,7 +24,6 @@ function extract_sources() {
 function source_package_already_present() {
     echo "Checking if source package is already there"
     vm_version=$(cat cog/build/vmVersionInfo.h | ./extract-vm-version.sh)
-    read -p "VM Version is $vm_version, is it correct? (CTRL+c to quit) "
     test -f ${PACKAGE_NAME}_${vm_version}.orig.tar.gz
     return $?
 }
