@@ -43,7 +43,7 @@ function build() {
         debuild -S ${upload_sources} --changes-option="-DDistribution=${distribution}"
     else
         echo "Create a binary package for immediate installation"
-        debuild -b ${upload_sources} -uc -us --changes-option="-DDistribution=${distribution}"
+        debuild -b ${upload_sources} -uc -us
     fi
 
     cd ..
