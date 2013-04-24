@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 PACKAGE_NAME=pharo-vm
 
 function extract_source_package() {
