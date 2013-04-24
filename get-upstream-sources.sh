@@ -21,9 +21,18 @@ function extract_sources() {
     cd ..
 }
 
+function wrong_vm_version_format() {
+    vm_version="$1"
+    # check that vm_Version is of the form YYYY.MM.DD
+    echo ${vm_version} | grep '^[[:digit:]]\{4\}\.[[:digit:]]\{2\}\.[[:digit:]]\{2\}$' > /dev/null
+    grep_succeeded=$?
+    [ ! $grep_succeeded -eq 0 ]
+    return $?
+}
+
 function source_package_already_present() {
+    vm_version="$1"
     echo "Checking if source package is already there"
-    vm_version=$(cat cog/build/vmVersionInfo.h | ./extract-vm-version.sh)
     test -f ${PACKAGE_NAME}_${vm_version}.orig.tar.gz
     return $?
 }
@@ -42,18 +51,28 @@ function clean_sources() {
 }
 
 function create_source_package() {
+    vm_version=$1
     echo "Create upstream tarball"
-    vm_version=$(cat cog/build/vmVersionInfo.h | ./extract-vm-version.sh)
+    rm -rf ${PACKAGE_NAME}-${vm_version}
     mv cog ${PACKAGE_NAME}-${vm_version}
     tar cfz ${PACKAGE_NAME}_${vm_version}.orig.tar.gz ${PACKAGE_NAME}-${vm_version}
 }
 
 download_sources
 extract_sources
-if source_package_already_present; then
+vm_version=$(cat cog/build/vmVersionInfo.h | ./extract-vm-version.sh)
+if wrong_vm_version_format "$vm_version"; then
+    echo "Can't extract the VM version from vmVersionInfo.h"
+    exit 1
+elif source_package_already_present "$vm_version"; then
     echo "Source package already present"
+    exit 1
 else
     echo "Source package is not present, creating it now"
     clean_sources
-    create_source_package
+    create_source_package "$vm_version"
+    # Don't change this line, it is used in other scripts to extract
+    # the vm_version:
+    echo "New version is: $vm_version"
+    exit 0
 fi
