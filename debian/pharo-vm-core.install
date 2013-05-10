@@ -1,5 +1,5 @@
 results/vm-*-null.so                    usr/lib/pharo-vm
-results/pharo                           usr/lib/pharo-vm
+results/pharo-vm                        usr/lib/pharo-vm
 results/libInternetConfigPlugin.so      usr/lib/pharo-vm
 results/libSqueakFFIPrims.so            usr/lib/pharo-vm
 results/libSqueakSSL.so                 usr/lib/pharo-vm

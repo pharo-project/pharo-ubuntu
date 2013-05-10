@@ -17,4 +17,5 @@ override_dh_install:
 	mv results/vm-display-X11 results/vm-display-X11.so
 	mv results/vm-sound-null results/vm-sound-null.so
 	mv results/vm-sound-ALSA results/vm-sound-ALSA.so
+	mv results/pharo results/pharo-vm
 	dh_install
