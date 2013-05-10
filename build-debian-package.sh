@@ -61,6 +61,11 @@ function usage() {
     echo -e "  --no-sources\t if you already uploaded the orig.tar.gz package"
 }
 
+if [[ $# -lt 3 ]]; then
+    usage
+    exit 1
+fi
+
 upstream_version=$1
 package_version=$2
 distribution=$3
@@ -75,6 +80,7 @@ fi
 want_source_package=0
 want_ppa_upload=1
 want_to_package_sources=0
+
 while [ $# -gt 0 ]; do
     case "$1" in
         -h|--help)
