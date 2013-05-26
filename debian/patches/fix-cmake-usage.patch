@@ -1,7 +1,0 @@
-This line in CMakeLists.txt causes trouble in recent cmake versions
---- a/build/CMakeLists.txt
-+++ b/build/CMakeLists.txt
-@@ -2,3 +2,2 @@
- cmake_minimum_required(VERSION 2.6.2)
--include(CMakeDetermineSystem)
- project("pharo")

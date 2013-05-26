@@ -1,6 +1,3 @@
-remove-ancient-files.patch
 pharo-is-not-squeak.patch
-typo-in-help-text.patch
 fix-cmake-root-directory.patch
-fix-cmake-usage.patch
 source-hardening.patch
