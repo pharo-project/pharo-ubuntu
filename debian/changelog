@@ -1,3 +1,13 @@
+pharo-vm (2013.05.15) UNRELEASED; urgency=low
+
+  * Upstream release.
+
+  * Remove patches that have been incorporated upstream:
+      remove-ancient-files.patch
+      fix-cmake-usage.patch
+      typo-in-help-text.patch
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Thur, 16 May 2013 14:38:29 +0200
 pharo-vm (2013.05.05) UNRELEASED; urgency=low
 
   * Upstream release.
