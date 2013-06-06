@@ -36,7 +36,7 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-declare -a distros=(raring quantal precise oneiric lucid)
+declare -a distros=(raring quantal precise lucid)
 
 if [ $want_to_package_sources -eq 0 ]; then
     sources_option=''
