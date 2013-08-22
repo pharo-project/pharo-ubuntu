@@ -6,6 +6,7 @@ To download and create the debian files:
 git clone git://github.com/pharo-project/pharo-vm-ubuntu.git
 cd pharo-vm-ubuntu/
 ./get-upstream-sources.sh
+ # at this point you have to update debian/changelog
 ./build-debian-package.sh 2013.03.20 1 quantal
 ```
 
