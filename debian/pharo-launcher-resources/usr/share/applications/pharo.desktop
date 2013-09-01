@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Pharo
+GenericName=Pharo
+Exec=pharo-vm-x /usr/share/pharo-launcher/pharo-launcher.image
+Icon=pharo
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Application;Development;
