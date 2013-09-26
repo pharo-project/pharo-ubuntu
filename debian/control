@@ -43,7 +43,7 @@ Package: pharo-launcher
 Architecture: i386
 Depends: pharo-vm-desktop
 Recommends:
-Description: A launcher for Pharo distributions.
+Description: Launcher for Pharo distributions.
  Pharo's goal is to deliver a clean, innovative, free open-source
  Smalltalk-inspired environment. By providing a stable and small core
  system, excellent dev tools, and maintained releases, Pharo is an
@@ -51,7 +51,9 @@ Description: A launcher for Pharo distributions.
  .
  The Pharo Launcher is a cross-platform application that
    - lets you manage your Pharo images (launch, rename, copy and delete);
-   - lets you download image templates (i.e., zip archives) from many different sources (Jenkins, files.pharo.org, and your local cache);
+   - lets you download image templates (i.e., zip archives) from many
+     different sources (Jenkins, files.pharo.org, and your local
+     cache);
    - lets you create new images from any template.
  .
  The idea behind the Pharo Launcher is that you should be able to
