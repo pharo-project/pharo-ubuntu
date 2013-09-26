@@ -3,6 +3,9 @@
 set -e
 
 PACKAGE_NAME=pharo-vm
+export DEBFULLNAME="Damien Cassou"
+export DEBEMAIL="damien.cassou@gmail.com"
+
 
 function extract_source_package() {
     upstream_version="$1"
@@ -42,10 +45,10 @@ function build() {
 
     if [ $want_source_package -eq 0 ]; then
         echo "Create a source package to delegate the build (to PPA for example)"
-        debuild -S ${upload_sources} --changes-option="-DDistribution=${distribution}"
+        debuild -k0xE2490AB1 -S ${upload_sources} --changes-option="-DDistribution=${distribution}"
     else
         echo "Create a binary package for immediate installation"
-        debuild -b ${upload_sources} -uc -us
+        debuild -k0xE2490AB1 -b ${upload_sources} -uc -us
     fi
 
     cd ..
