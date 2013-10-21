@@ -1,0 +1,3 @@
+pharo-launcher.image         usr/share/pharo-launcher
+pharo-launcher.changes       usr/share/pharo-launcher
+debian/resources/usr         .

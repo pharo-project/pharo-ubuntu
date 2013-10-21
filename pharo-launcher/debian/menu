@@ -1,0 +1,2 @@
+?package(pharo-launcher):needs="X11" section="Applications/Programming"\
+  title="Pharo" command="/usr/bin/pharo"

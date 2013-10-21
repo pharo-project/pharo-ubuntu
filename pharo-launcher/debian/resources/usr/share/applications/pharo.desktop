@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Pharo
+GenericName=Pharo
+Exec=pharo
+Icon=pharo
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Application;Development;

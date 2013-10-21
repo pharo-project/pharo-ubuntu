@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec pharo-vm-x /usr/share/pharo-launcher/pharo-launcher.image

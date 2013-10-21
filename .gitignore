@@ -1,3 +1,9 @@
+*.upload
+*.orig.tar.gz
+*.debian.tar.gz
+*.dsc
+*.build
+*.changes
 cog
 sources.tar.gz
 pharo-vm-2013.*
@@ -6,3 +12,6 @@ pharo-vm_2013.*
 get-sources.log
 PharoDebug.log
 nohup.out
+/pharo-launcher/PharoLauncher.zip
+/pharo-launcher/jenkins.json
+/pharo-launcher/pharo-launcher-25/

@@ -1,0 +1,30 @@
+Source: pharo-launcher
+Section: interpreters
+Priority: optional
+Maintainer: Damien Cassou <damien.cassou@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.4
+Homepage: http://pharo-project.org
+
+Package: pharo-launcher
+Architecture: all
+Depends: pharo-vm-desktop:i386, ${misc:Depends}
+Description: Launcher for Pharo distributions.
+ Pharo's goal is to deliver a clean, innovative, free open-source
+ Smalltalk-inspired environment. By providing a stable and small core
+ system, excellent dev tools, and maintained releases, Pharo is an
+ attractive platform to build and deploy mission critical applications.
+ .
+ The Pharo Launcher is a cross-platform application that
+   - lets you manage your Pharo images (launch, rename, copy and delete);
+   - lets you download image templates (i.e., zip archives) from many
+     different sources (Jenkins, files.pharo.org, and your local
+     cache);
+   - lets you create new images from any template.
+ .
+ The idea behind the Pharo Launcher is that you should be able to
+ access it very rapidly from your OS application launcher. As a
+ result, launching any image is never more than 3 clicks away.
+ .
+ Please fill bug reports on http://bugs.pharo.org under the 'Launcher'
+ project.
