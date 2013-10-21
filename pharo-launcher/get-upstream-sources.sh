@@ -6,22 +6,13 @@ set -e
 
 PACKAGE_NAME=pharo-launcher
 
-
-JOB="https://ci.inria.fr/pharo-contribution/job/PharoLauncherFinalUserImage"
-VERSION=
+ARTIFACT="https://ci.inria.fr/pharo-contribution/job/PharoLauncherFinalUserImage/lastSuccessfulBuild/artifact/PharoLauncher.zip"
+VERSION=$(date +%Y.%m.%d)
 
 function download_sources() {
     echo "Download sources from ci.inria.fr"
 
-    # Using the Jenkins JSON API, extract the version number and URL
-    # of the latest build
-    wget "$JOB/api/json?tree=lastSuccessfulBuild[number,url]" -O jenkins.json
-    VERSION=$(cat jenkins.json | jq .lastSuccessfulBuild.number)
-
-    url=$(cat jenkins.json | jq .lastSuccessfulBuild.url | tr -d '"')
-    url="$url/artifact/PharoLauncher.zip"
-
-    wget "$url" -O PharoLauncher.zip
+    wget $ARTIFACT -O PharoLauncher.zip
 }
 
 function extract_sources() {
@@ -38,6 +29,7 @@ function create_source_package() {
     rm -rf ${PACKAGE_NAME}-${VERSION}
     mv launcher ${PACKAGE_NAME}-${VERSION}
     tar cfz ${PACKAGE_NAME}_${VERSION}.orig.tar.gz ${PACKAGE_NAME}-${VERSION}
+    rm -rf ${PACKAGE_NAME}-${VERSION}
 }
 
 download_sources
