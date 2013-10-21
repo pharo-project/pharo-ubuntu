@@ -36,7 +36,9 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-declare -a distros=(saucy raring quantal precise lucid)
+# Don't build on 'precise' because I can't specify the
+# pharo-vm-desktop:i386 dependency.
+declare -a distros=(saucy raring quantal)
 
 if [ $want_to_package_sources -eq 0 ]; then
     sources_option=''
