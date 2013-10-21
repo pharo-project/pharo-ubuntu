@@ -6,6 +6,6 @@ Icon=pharo
 Terminal=false
 Type=Application
 StartupNotify=false
-Categories=Application;Development;
+Categories=Development;
 MimeType=application/x-pharo-image;
 NoDisplay=true
