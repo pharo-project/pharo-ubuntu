@@ -7,8 +7,8 @@ Change the name of the executable file from Squeak to Pharo
  /* name of Squeak windows in Xrm and the WM */
 -#define xResClass	"Squeak"
 -#define xResName	"squeak"
-+#define xResClass	"PharoQuiTueResClass"
-+#define xResName	"PharoQuiTueResName"
++#define xResClass	"pharo-vm"
++#define xResName	"Pharo"
  
  char		*displayName= 0;	/* name of display, or 0 for $DISPLAY */
  Display		*stDisplay= null;	/* Squeak display */
