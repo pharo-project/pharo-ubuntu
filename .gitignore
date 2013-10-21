@@ -1,8 +1,8 @@
 cog
-/sources.tar.gz
-/pharo-vm-2013.*
-/pharo-vm_2013.*
+sources.tar.gz
+pharo-vm-2013.*
+pharo-vm_2013.*
 *.deb
-/get-sources.log
-/debian/pharo-launcher-resources/usr/share/pharo-launcher/PharoDebug.log
-/debian/pharo-launcher-resources/usr/share/pharo-launcher/nohup.out
+get-sources.log
+PharoDebug.log
+nohup.out
