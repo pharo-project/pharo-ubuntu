@@ -1,3 +1,8 @@
+pharo-vm (2013.12.16) UNRELEASED; urgency=low
+
+  * Upstream release.
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Tue, 17 Dec 2013 09:37:10 +0200
 pharo-vm (2013.10.07) UNRELEASED; urgency=low
 
   * Fix binary name (X11 res_class) so that it is the same as the desktop file.

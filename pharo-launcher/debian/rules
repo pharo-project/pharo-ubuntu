@@ -13,6 +13,6 @@
 	dh $@ 
 
 override_dh_install:
-	mv PharoLauncher.image pharo-launcher.image
-	mv PharoLauncher.changes pharo-launcher.changes
+	mv Pharo.image pharo-launcher.image
+	mv Pharo.changes pharo-launcher.changes
 	dh_install
