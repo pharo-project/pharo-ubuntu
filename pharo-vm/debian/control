@@ -2,7 +2,7 @@ Source: pharo-vm
 Maintainer: Damien Cassou <damien.cassou@gmail.com>
 Section: interpreters
 Priority: optional
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Homepage: http://pharo-project.org
 Build-Depends: debhelper (>= 7.0.50~), libssl-dev, libfreetype6-dev, libsm-dev, libice-dev, libasound2-dev, cmake, mesa-common-dev, libgl1-mesa-dev
 
