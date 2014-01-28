@@ -1,4 +1,3 @@
-/pharo-launcher/pharo-launcher-2013*
 *.upload
 *.orig.tar.gz
 *.debian.tar.gz
@@ -13,6 +12,9 @@ pharo-vm_2013.*
 get-sources.log
 PharoDebug.log
 nohup.out
+/pharo-launcher/pharo-launcher-2013*
 /pharo-launcher/PharoLauncher.zip
 /pharo-launcher/jenkins.json
 /pharo-launcher/pharo-launcher-25/
+/pillar/Pillar.zip
+/pillar/pillar-0.6/

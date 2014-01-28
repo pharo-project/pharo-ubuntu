@@ -1,0 +1,3 @@
+pillar.image                 usr/share/pillar
+pillar.changes               usr/share/pillar
+pillar                       usr/bin

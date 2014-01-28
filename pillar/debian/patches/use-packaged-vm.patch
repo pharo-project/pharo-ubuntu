@@ -1,0 +1,12 @@
+Use VM from pharo-vm-core package
+--- a/pillar
++++ b/pillar
+@@ -1,6 +1,6 @@
+ #!/bin/bash
+-PHARO_VM=${PHARO_VM:-./pharo}
+-PILLAR_IMAGE=${PILLAR_IMAGE:-./Pharo.image}
++PHARO_VM=${PHARO_VM:-pharo-vm-nox}
++PILLAR_IMAGE=${PILLAR_IMAGE:-/usr/share/pillar/pillar.image}
+ 
+ command=$1
+ shift

@@ -1,0 +1,20 @@
+Source: pillar
+Section: text
+Priority: optional
+Maintainer: Damien Cassou <damien.cassou@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.4
+Homepage: http://www.smalltalkhub.com/#!/~Pier/Pillar
+
+Package: pillar
+Architecture: all
+Depends: pharo-vm-core:i386, ${misc:Depends}
+Description: Markup syntax and tools to write documentation.
+ Pillar has many features:
+  - simple markup-based syntax with references, tables, pictures, captions...
+  - export to HTML, LaTeX and markdown (more to come)
+  - customization of the export through a dedicated STON configuration file
+  - support of templates using the Mustache templating engine
+  - syntax-highlighting of generated code blocks (not yet in LaTeX)
+  - configurable numbering of section titles and figures
+  - ...
