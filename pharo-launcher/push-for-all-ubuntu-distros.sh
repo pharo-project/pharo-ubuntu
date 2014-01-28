@@ -36,7 +36,7 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-declare -a distros=(trusty saucy quantal precise lucid)
+declare -a distros=(trusty saucy quantal)
 
 if [ $want_to_package_sources -eq 0 ]; then
     sources_option=''

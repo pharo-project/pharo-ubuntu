@@ -38,7 +38,7 @@ done
 
 # Don't build on 'precise' because I can't specify the
 # pharo-vm-desktop:i386 dependency.
-declare -a distros=(trusty saucy quantal precise lucid)
+declare -a distros=(trusty saucy quantal)
 
 if [ $want_to_package_sources -eq 0 ]; then
     sources_option=''
