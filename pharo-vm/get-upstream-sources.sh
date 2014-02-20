@@ -4,11 +4,11 @@ set -e
 
 PACKAGE_NAME=pharo-vm
 
-VM_SOURCES_URL='https://ci.inria.fr/pharo/job/PharoVM/Architecture=32,Slave=vm-builder-linux/lastSuccessfulBuild/artifact/sources.tar.gz'
+VM_SOURCES_URL='http://files.pharo.org/vm/src/cog.tar.gz'
 
 function download_sources() {
-    echo "Download sources from ci.inria.fr"
-    rm -f sources.tar.gz
+    echo "Download sources from files.pharo.org"
+    rm -f cog.tar.gz
     wget "${VM_SOURCES_URL}" -O sources.tar.gz
 }
 
