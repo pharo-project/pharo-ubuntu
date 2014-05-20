@@ -4,3 +4,4 @@ debian/pharo-desktop-resources/usr/share/icons/hicolor/32x32/apps/pharo.png
 debian/pharo-desktop-resources/usr/share/icons/hicolor/48x48/apps/pharo.png
 debian/pharo-core-resources/usr/share/pharo-vm/PharoV10.sources
 debian/pharo-core-resources/usr/share/pharo-vm/PharoV20.sources
+debian/pharo-core-resources/usr/share/pharo-vm/PharoV30.sources
