@@ -1,0 +1,28 @@
+* pharo-vm-core
+
+This directory is for creating the ~pharo-vm-core~ Debian
+meta-package. This package has no content and only dependencies. The
+idea is that installing this package will install the right Pharo
+Virtual Machine (VM) depending on your architecture.
+
+** How to update the package
+
+When you want to change this package (should only be done on rare
+occasions):
+
+#Go to the ~pharo-vm-core~ directory, make your changes, update the
+~debian/changelog~ file, run ~debuild -S~
+
+** How it works
+
+The important file here is ~pharo-vm-core/debian/control~ which
+indicates the dependencies.
+
+The ~Depends:~ line contains a reference to ~pharo-vm-core-i386~ that
+is the real VM binary package. The Debian Multiarch system will take
+care of installing the dependency even if the target architecture is
+not i386.
+
+The ~Architecture: all~ line indicates that the package is independent
+of the architecture, should be built only once for all possible
+architectures, and can be installed anywhere.

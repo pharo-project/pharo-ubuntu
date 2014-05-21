@@ -1,0 +1,24 @@
+Source: pharo-vm-core
+Homepage: http://www.pharo.org
+Section: interpreters
+Priority: optional
+Maintainer: Damien Cassou <damien.cassou@gmail.com>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.5
+
+Package: pharo-vm-core
+Architecture: all
+Depends: ${misc:Depends}, pharo-vm-core-i386, pharo-sources-files
+Suggests: pharo-vm-desktop
+Description: Clean and innovative Smalltalk-inspired environment.
+ Pharo's goal is to deliver a clean, innovative, free open-source
+ Smalltalk-inspired environment. By providing a stable and small core
+ system, excellent dev tools, and maintained releases, Pharo is an
+ attractive platform to build and deploy mission critical applications.
+ .
+ This package is a meta package that depends on the 32bits Pharo
+ Virtual Machine. This package is suitable for headless usage. For
+ developer usage, please install the pharo-vm-desktop as well.
+ .
+ Please fill bug reports on http://bugs.pharo.org under the 'Ubuntu
+ packaging (ppa:cassou/pharo)' project.

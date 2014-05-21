@@ -1,0 +1,30 @@
+pharo-vm-core (1.0.4) trusty; urgency=low
+
+  * Stop specifying Multi-Arch because what I want is the default
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Tue, 21 May 2014 10:42:10 +0200
+
+pharo-vm-core (1.0.3) trusty; urgency=low
+
+  * Try "Multi-Arch: none"
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Tue, 21 May 2014 10:36:10 +0200
+
+pharo-vm-core (1.0.2) trusty; urgency=low
+
+  * Try "Architecture: all"
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Tue, 20 May 2014 16:36:10 +0200
+
+pharo-vm-core (1.0.1) trusty; urgency=low
+
+  * Try "Multi-Arch: foreign"
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Tue, 20 May 2014 15:32:10 +0200
+
+pharo-vm-core (1.0) trusty; urgency=low
+
+  * Initial upload.
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Tue, 20 May 2014 14:19:10 +0200
+
