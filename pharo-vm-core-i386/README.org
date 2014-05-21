@@ -1,0 +1,36 @@
+* pharo-vm-core-i386
+
+This directory is meant to generate a Debian package that contains the
+Pharo virtual machine (VM) files. This package can only compile on
+32bits architectures but can be installed on others (e.g., amd64).
+
+** Contents
+
+This directory contains:
+
+- ~build-debian-package.sh~ :: bash script that can generate the
+     necessary ~.deb~ files.
+- ~get-upstream-sources.sh~ :: bash script that downloads the VM
+     source files from the web and prepare them for packaging.
+- ~push-for-all-ubuntu-distros.sh~ :: bash script that calls
+     ~build-debian-package.sh~ for all supported Ubuntu distributions
+     and push the generated files to a dedicated PPA.
+- ~debian/~ :: a directory containing the description of the packages
+               to generate.
+
+** Updating the package with new VM sources
+
+When you want to update the package with new VM sources, execute
+~get-upstream-sources.sh~, update ~debian/changelog~, and execute
+~push-for-all-ubuntu-distros.sh~.
+
+** How it works
+
+The ~debian/control~ file has two important fields:
+
+- ~Architecture: i386~ :: indicates that the package should only be
+     built on an ~i386~ architecture ([[https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Architecture][read more]]).
+- ~Multi-Arch: foreign~ :: indicates that the package can be installed
+     ([[https://wiki.ubuntu.com/MultiarchSpec][read more]]).
+
+#  LocalWords:  PPA
