@@ -1,0 +1,11 @@
+pharo-sources-files (1.0.1) trusty; urgency=low
+
+  * Try again with new install rules
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Wed, 21 May 2014 14:27:24 +0200
+
+pharo-sources-files (1.0) trusty; urgency=low
+
+  * Initial Release.
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Wed, 21 May 2014 12:34:24 +0200
