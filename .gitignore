@@ -1,6 +1,5 @@
 *.upload
-*.orig.tar.gz
-*.debian.tar.gz
+*.tar.gz
 *.dsc
 *.build
 *.changes
@@ -18,3 +17,5 @@ nohup.out
 /pharo-launcher/pharo-launcher-25/
 /pillar/Pillar.zip
 /pillar/pillar-0.6/
+pharo-vm-core-i386-2014.*/
+/pharo-vm-core-i386/README.html
