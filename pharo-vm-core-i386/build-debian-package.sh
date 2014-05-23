@@ -2,7 +2,6 @@
 
 set -e
 
-PACKAGE_NAME=pharo-vm-core-i386
 export DEBFULLNAME="Damien Cassou"
 export DEBEMAIL="damien.cassou@gmail.com"
 
@@ -55,7 +54,7 @@ function build() {
 }
 
 function usage() {
-    echo "Usage: $0 <upstream_version> <package_version> <distribution> [OPTIONS]"
+    echo "Usage: $0 <package name> <upstream_version> <package_version> <distribution> [OPTIONS]"
     echo "Create the *.deb files"
     echo ""
     echo -e "  --binary\t if you want to build the package locally"
@@ -69,6 +68,7 @@ if [[ $# -lt 3 ]]; then
     exit 1
 fi
 
+export PACKAGE_NAME=$0
 upstream_version=$1
 package_version=$2
 distribution=$3

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+declare -a distros=(trusty saucy quantal precise lucid)
+
+PPA=pharo/unstable
+PACKAGE_NAME=$(basename $PWD)
+
 function usage() {
     echo "Usage: $0 <upstream_version> <package_version> [OPTIONS]"
     echo "Upload the *.deb files to the Ubuntu PPA"
@@ -36,8 +41,6 @@ while [ $# -gt 0 ]; do
     shift
 done
 
-# declare -a distros=(trusty saucy quantal precise lucid)
-declare -a distros=(trusty)
 
 if [ $want_to_package_sources -eq 0 ]; then
     sources_option=''
@@ -45,8 +48,24 @@ else
     sources_option='--no-sources'
 fi
 
+
+# We take the first distribution in distros and build for it
+distro=${distros[0]}
+./build-debian-package.sh $PACKAGE_NAME $upstream_version $package_version $distro $sources_option
+
+# We take the remaining distributions (i.e., the one starting at index
+# 1 to the last item)
+distros=(${distros[@]:1})
+
+folder=$PACKAGE_NAME-$upstream_version
+cd $folder
+
 for distro in "${distros[@]}"; do
-    ./build-debian-package.sh $upstream_version $package_version $distro $sources_option --upload
-    # Once sources have been uploaded, there is no need to upload them again
-    sources_option='--no-sources'
+    tail -n +7 debian/changelog > debian/changelog.new
+    mv debian/changelog.new debian/changelog
+
+    dch --distribution ${distro} --local "-${package_version}~ppa1~${distro}" "Build for ${distro}"
+    debuild -S -sd
 done
+
+dput ppa:$PPA ${PACKAGE_NAME}_${upstream_version}-${package_version}\~ppa1\~*.changes
