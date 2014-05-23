@@ -1,3 +1,10 @@
+pharo-sources-files (1.0.2) trusty; urgency=low
+
+  * Change compression format (xz -> gzip) to get compatibility with
+        Lucid 10.04
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Thu, 22 May 2014 17:17:24 +0200
+
 pharo-sources-files (1.0.1) trusty; urgency=low
 
   * Try again with new install rules

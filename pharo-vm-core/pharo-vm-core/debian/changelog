@@ -1,3 +1,10 @@
+pharo-vm-core (1.0.5) trusty; urgency=low
+
+  * Change compression format (xz -> gzip) to get compatibility with
+        Lucid 10.04
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Thu, 22 May 2014 18:15:10 +0200
+
 pharo-vm-core (1.0.4) trusty; urgency=low
 
   * Stop specifying Multi-Arch because what I want is the default

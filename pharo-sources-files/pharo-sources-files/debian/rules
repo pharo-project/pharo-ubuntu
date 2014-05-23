@@ -5,4 +5,10 @@
 #export DH_VERBOSE=1
 
 %:
-	dh $@ 
+	dh $@ --parallel
+
+# These 2 lines keep compatibility with Lucid which does not support
+# xz compression (the default now). Remove them as soon as Lucid 10.04
+# is no more officially supported.
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip
