@@ -14,11 +14,13 @@ occasions):
 1. Make your changes in the ~debian/~ directory,
 1. Update the ~debian/changelog~ file,
 1. Run ~debuild -S~
-1. Run 
+1. Run ~dput ppa:pharo/unstable pharo-vm_VERSION_NUMBER_source.changes ~
+1. Wait for the package to be built and published
+1. [[https://launchpad.net/~pharo/%2Barchive/ubuntu/unstable/%2Bcopy-packages][Copy the new package]] using the ~Copy existing binaries~ option.
 
 ** How it works
 
-The important file here is ~pharo-vm-core/debian/control~ which
+The important file here is ~pharo-vm/debian/control~ which
 indicates the dependencies.
 
 The ~Depends:~ line contains a reference to ~pharo-vm-core-i386~ that
