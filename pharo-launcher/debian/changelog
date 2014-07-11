@@ -1,3 +1,8 @@
+pharo-launcher (2014.07.11) unstable; urgency=low
+
+  * Upstream release
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Fri, 11 Jul 2014 16:55:14 +0200
 pharo-launcher (2014.05.28) unstable; urgency=low
 
   * Upstream release

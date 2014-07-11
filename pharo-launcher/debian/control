@@ -8,7 +8,7 @@ Homepage: http://pharo-project.org
 
 Package: pharo-launcher
 Architecture: all
-Depends: pharo-vm-desktop:i386, ${misc:Depends}
+Depends: pharo-vm-desktop, ${misc:Depends}
 Description: Launcher for Pharo distributions.
  Pharo's goal is to deliver a clean, innovative, free open-source
  Smalltalk-inspired environment. By providing a stable and small core

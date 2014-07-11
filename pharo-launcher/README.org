@@ -1,0 +1,17 @@
+* pharo-launcher
+
+[[http://www.smalltalkhub.com/#!/~Pharo/PharoLauncher][Pharo-launcher website]]
+
+This directory includes the ~debian/~ directory and scripts for
+building pharo-launcher packages for Ubuntu.
+
+** How to update the package
+
+When you want to change this package (should be done after each new
+release of Pharo Launcher) :
+
+1. Run ~get-upstream-sources.sh~
+1. Update the ~debian/changelog~ file,
+1. Run ~build-debian-package.sh VERSION_NUMBER 1 trusty --upload~
+1. Wait for the package to be built and published
+1. [[https://launchpad.net/~pharo/%2Barchive/ubuntu/unstable/%2Bcopy-packages][Copy the new package]] using the ~Copy existing binaries~ option.

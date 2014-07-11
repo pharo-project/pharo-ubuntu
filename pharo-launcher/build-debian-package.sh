@@ -114,5 +114,5 @@ extract_source_package $upstream_version
 build $upstream_version $package_version $distribution $want_to_package_sources $want_source_package
 
 if [ $want_ppa_upload -eq 0 ]; then
-    dput ppa:pharo/stable ${PACKAGE_NAME}_${upstream_version}-${package_version}~ppa1~${distribution}1_source.changes
+    dput ppa:pharo/unstable ${PACKAGE_NAME}_${upstream_version}-${package_version}~ppa1~${distribution}1_source.changes
 fi
