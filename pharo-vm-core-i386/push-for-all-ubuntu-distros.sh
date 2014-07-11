@@ -1,12 +1,8 @@
 #!/bin/bash
 
-set -xv
-
-
 set -e
 
-# declare -a distros=(utopic trusty saucy quantal precise lucid)
-declare -a distros=(utopic)
+declare -a distros=(utopic trusty saucy quantal precise lucid)
 
 PPA=pharo/unstable
 PACKAGE_NAME=$(basename $PWD)
