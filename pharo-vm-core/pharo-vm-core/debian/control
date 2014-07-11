@@ -1,4 +1,4 @@
-Source: pharo-vm-core
+Source: pharo-vm
 Homepage: http://www.pharo.org
 Section: interpreters
 Priority: optional
@@ -21,4 +21,20 @@ Description: Clean and innovative Smalltalk-inspired environment.
  developer usage, please install the pharo-vm-desktop as well.
  .
  Please fill bug reports on http://bugs.pharo.org under the 'Ubuntu
- packaging (ppa:cassou/pharo)' project.
+ packaging (ppa:pharo/stable)' project.
+
+Package: pharo-vm-desktop
+Architecture: all
+Depends: ${misc:Depends}, pharo-vm-core
+Recommends: libcairo2
+Description: Clean and innovative Smalltalk-inspired environment.
+ Pharo's goal is to deliver a clean, innovative, free open-source
+ Smalltalk-inspired environment. By providing a stable and small core
+ system, excellent dev tools, and maintained releases, Pharo is an
+ attractive platform to build and deploy mission critical applications.
+ .
+ This package provides the Pharo Virtual Machine (VM) suitable for the
+ developers. For headless usage, only pharo-vm-core is necessary.
+ .
+ Please fill bug reports on http://bugs.pharo.org under the 'Ubuntu
+ packaging (ppa:pharo/stable)' project.
