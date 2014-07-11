@@ -1,6 +1,12 @@
 #!/bin/bash
 
-declare -a distros=(trusty saucy quantal precise lucid)
+set -xv
+
+
+set -e
+
+# declare -a distros=(utopic trusty saucy quantal precise lucid)
+declare -a distros=(utopic)
 
 PPA=pharo/unstable
 PACKAGE_NAME=$(basename $PWD)
@@ -53,19 +59,22 @@ fi
 distro=${distros[0]}
 ./build-debian-package.sh $PACKAGE_NAME $upstream_version $package_version $distro $sources_option
 
-# We take the remaining distributions (i.e., the one starting at index
-# 1 to the last item)
-distros=(${distros[@]:1})
+# We take the remaining distributions (i.e., the one from index 1 to
+# the last item)
+all_but_first_distros=(${distros[@]:1})
 
 folder=$PACKAGE_NAME-$upstream_version
 cd $folder
 
-for distro in "${distros[@]}"; do
+for distro in "${all_but_first_distros[@]}"; do
     tail -n +7 debian/changelog > debian/changelog.new
     mv debian/changelog.new debian/changelog
 
     dch --distribution ${distro} --local "-${package_version}~ppa1~${distro}" "Build for ${distro}"
     debuild -S -sd
 done
+cd ..
 
-dput ppa:$PPA ${PACKAGE_NAME}_${upstream_version}-${package_version}\~ppa1\~*.changes
+for distro in "${distro[@]}"; do
+    dput ppa:$PPA ${PACKAGE_NAME}_${upstream_version}-${package_version}\~ppa1\~${distro}1_*.changes
+done

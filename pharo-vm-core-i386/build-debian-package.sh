@@ -68,14 +68,14 @@ if [[ $# -lt 3 ]]; then
     exit 1
 fi
 
-export PACKAGE_NAME=$0
-upstream_version=$1
-package_version=$2
-distribution=$3
+export PACKAGE_NAME=$1
+upstream_version=$2
+package_version=$3
+distribution=$4
 
-shift 3
+shift 4
 
-if [ -z "$upstream_version" -o -z "$package_version" -o -z "$distribution" ]; then
+if [ -z "$PACKAGE_NAME" -o -z "$upstream_version" -o -z "$package_version" -o -z "$distribution" ]; then
     usage
     exit 1
 fi
