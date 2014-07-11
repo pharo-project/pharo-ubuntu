@@ -10,7 +10,7 @@ ARTIFACT_DIR="https://ci.inria.fr/pharo-contribution/job/Pillar/PHARO=30,VERSION
 IMAGE="$ARTIFACT_DIR/Pillar-deployment.zip"
 SCRIPT="$ARTIFACT_DIR/pillar"
 
-VERSION=0.6
+VERSION=0.8
 
 function download_sources() {
     echo "Download sources from ci.inria.fr"
