@@ -1,3 +1,8 @@
+pharo-vm (2014.07.11) trusty; urgency=low
+
+  * Version bump to facilitate migration from older packages
+
+ -- Damien Cassou <damien.cassou@gmail.com>  Fri, 11 July 2014 16:54:00 +0200
 pharo-vm (1.0.6) trusty; urgency=low
 
   * Version bump to avoid conflict with previously published pharo-vm-core package
