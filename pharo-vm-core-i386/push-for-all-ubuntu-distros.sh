@@ -16,6 +16,11 @@ function usage() {
     echo -e "  --no-sources\t if you already uploaded the orig.tar.gz package"
 }
 
+if [[ $# -lt 2 ]]; then
+    usage
+    exit 1
+fi
+
 upstream_version=$1
 package_version=$2
 
