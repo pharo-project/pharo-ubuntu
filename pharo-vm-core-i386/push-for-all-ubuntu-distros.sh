@@ -4,6 +4,8 @@ set -e
 
 declare -a distros=(utopic trusty saucy quantal precise lucid)
 
+export DEBFULLNAME="Damien Cassou"
+export DEBEMAIL="damien.cassou@gmail.com"
 PPA=pharo/unstable
 PACKAGE_NAME=$(basename $PWD)
 
