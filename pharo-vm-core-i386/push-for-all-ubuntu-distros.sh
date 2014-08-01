@@ -2,7 +2,7 @@
 
 set -e
 
-declare -a distros=(utopic trusty saucy quantal precise lucid)
+declare -a distros=(utopic trusty saucy precise lucid)
 
 export DEBFULLNAME="Damien Cassou"
 export DEBEMAIL="damien.cassou@gmail.com"
