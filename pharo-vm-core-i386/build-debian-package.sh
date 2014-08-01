@@ -63,7 +63,7 @@ function usage() {
     echo -e "  --no-sources\t if you already uploaded the orig.tar.gz package"
 }
 
-if [[ $# -lt 3 ]]; then
+if [[ $# -lt 4 ]]; then
     usage
     exit 1
 fi
