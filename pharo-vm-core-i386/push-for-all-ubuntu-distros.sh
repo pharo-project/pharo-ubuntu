@@ -78,6 +78,6 @@ for distro in "${all_but_first_distros[@]}"; do
 done
 cd ..
 
-for distro in "${distro[@]}"; do
+for distro in "${distros[@]}"; do
     dput ppa:$PPA ${PACKAGE_NAME}_${upstream_version}-${package_version}\~ppa1\~${distro}1_*.changes
 done
