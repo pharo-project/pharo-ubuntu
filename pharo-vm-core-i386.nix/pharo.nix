@@ -6,13 +6,11 @@ stdenv.mkDerivation rec {
   src = ./pharo-vm-core-i386_2014.01.26.orig.tar.gz;
 
   # Building
-  preConfigure = myPreConfigure;
-  myPreConfigure = ''
+  preConfigure = ''
     cd build/
   '';
   resources = ./resources;
-  installPhase = myInstallPhase;
-  myInstallPhase = ''
+  installPhase = ''
     echo Current directory $(pwd)
     echo Creating prefix "$prefix"
     mkdir -p "$prefix/usr/lib/pharo-vm"
