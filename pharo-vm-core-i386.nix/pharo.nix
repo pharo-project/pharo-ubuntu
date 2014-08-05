@@ -51,7 +51,7 @@ stdenv.mkDerivation rec {
     chmod +x $prefix/usr/bin/pharo-vm-x $prefix/usr/bin/pharo-vm-nox
   '';
 
- patches = [ patches/source-hardening.patch patches/pharo-is-not-squeak.patch patches/fix-executable-name.patch patches/fix-cmake-root-directory.patch ];
+ patches = [ patches/pharo-is-not-squeak.patch patches/fix-executable-name.patch patches/fix-cmake-root-directory.patch ];
  
   buildInputs = [ bash cmake pkgsi686Linux.glibc  pkgsi686Linux.openssl pkgsi686Linux.gcc pkgsi686Linux.mesa pkgsi686Linux.freetype pkgsi686Linux.xlibs.libX11 pkgsi686Linux.xlibs.libICE pkgsi686Linux.xlibs.libSM pkgsi686Linux.alsaLib ];
 }
