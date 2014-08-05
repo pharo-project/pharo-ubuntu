@@ -1,9 +1,12 @@
-{ stdenv, cmake, bash, pkgsi686Linux }:
+{ stdenv, fetchurl, cmake, bash, pkgsi686Linux, unzip, python }:
 
 stdenv.mkDerivation rec {
-  name = "pharo-vm-core-i386-2014.01.26";
+  name = "pharo-vm-core-i386-2014.06.25";
   system = "x86_32-linux";
-  src = ./pharo-vm-core-i386_2014.01.26.orig.tar.gz;
+  src = fetchurl {
+    url = http://files.pharo.org/vm/src/vm-unix-sources/pharo-vm-2014.06.25.tar.bz2;
+    md5 = "4d80d8169c2f2f0355c43ee90bbad23f";
+  };
 
   # Building
   preConfigure = ''
@@ -53,5 +56,5 @@ stdenv.mkDerivation rec {
 
  patches = [ patches/pharo-is-not-squeak.patch patches/fix-executable-name.patch patches/fix-cmake-root-directory.patch ];
  
-  buildInputs = [ bash cmake pkgsi686Linux.glibc  pkgsi686Linux.openssl pkgsi686Linux.gcc pkgsi686Linux.mesa pkgsi686Linux.freetype pkgsi686Linux.xlibs.libX11 pkgsi686Linux.xlibs.libICE pkgsi686Linux.xlibs.libSM pkgsi686Linux.alsaLib ];
+  buildInputs = [ bash unzip cmake pkgsi686Linux.glibc  pkgsi686Linux.openssl pkgsi686Linux.gcc pkgsi686Linux.mesa pkgsi686Linux.freetype pkgsi686Linux.xlibs.libX11 pkgsi686Linux.xlibs.libICE pkgsi686Linux.xlibs.libSM pkgsi686Linux.alsaLib ];
 }
