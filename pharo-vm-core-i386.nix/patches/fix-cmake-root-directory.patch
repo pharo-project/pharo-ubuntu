@@ -13,7 +13,7 @@ Subject: Fix use of absolute paths in cmake files
  list(APPEND LINKLIBS m)
  list(APPEND LINKLIBS dl)
  list(APPEND LINKLIBS pthread)
--set(EXECUTABLE_OUTPUT_PATH "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/results")
+-set(EXECUTABLE_OUTPUT_PATH "/builds/workspace/Pharo-vm-unix-sources/cog/results")
 +set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/../results")
  add_subdirectory("vm-display-null")
  add_subdirectory("vm-display-X11")
@@ -21,13 +21,13 @@ Subject: Fix use of absolute paths in cmake files
 --- a/build/directories.cmake
 +++ b/build/directories.cmake
 @@ -1,12 +1,12 @@
--set(topDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog")
--set(buildDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/build")
+-set(topDir "/builds/workspace/Pharo-vm-unix-sources/cog")
+-set(buildDir "/builds/workspace/Pharo-vm-unix-sources/cog/build")
 +set(topDir "${CMAKE_SOURCE_DIR}/..")
 +set(buildDir "${CMAKE_SOURCE_DIR}/../build")
  set(thirdpartyDir "${buildDir}/thirdParty")
--set(platformsDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/platforms")
--set(srcDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/src")
+-set(platformsDir "/builds/workspace/Pharo-vm-unix-sources/cog/platforms")
+-set(srcDir "/builds/workspace/Pharo-vm-unix-sources/cog/src")
 +set(platformsDir "${CMAKE_SOURCE_DIR}/../platforms")
 +set(srcDir "${CMAKE_SOURCE_DIR}/../src")
  set(srcPluginsDir "${srcDir}/plugins")
@@ -36,7 +36,7 @@ Subject: Fix use of absolute paths in cmake files
  set(targetPlatform ${platformsDir}/${platformName})
  set(crossDir "${platformsDir}/Cross")
  set(platformVMDir "${targetPlatform}/vm")
--set(outputDir "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/results")
+-set(outputDir "/builds/workspace/Pharo-vm-unix-sources/cog/results")
 +set(outputDir "${CMAKE_SOURCE_DIR}/../results")
 --- a/build/vm-display-X11/CMakeLists.txt
 +++ b/build/vm-display-X11/CMakeLists.txt
@@ -44,7 +44,7 @@ Subject: Fix use of absolute paths in cmake files
  include_directories(${crossDir}/plugins/FilePlugin)
  include_directories(${targetPlatform}/plugins/B3DAcceleratorPlugin)
  include_directories(${crossDir}/plugins/B3DAcceleratorPlugin)
--set(LIBRARY_OUTPUT_PATH "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/results")
+-set(LIBRARY_OUTPUT_PATH "/builds/workspace/Pharo-vm-unix-sources/cog/results")
 +set(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/../results")
  list(APPEND LINKLIBS SM)
  list(APPEND LINKLIBS ICE)
@@ -55,7 +55,7 @@ Subject: Fix use of absolute paths in cmake files
  include_directories(${crossDir}/plugins/FilePlugin)
  include_directories(${targetPlatform}/plugins/B3DAcceleratorPlugin)
  include_directories(${crossDir}/plugins/B3DAcceleratorPlugin)
--set(LIBRARY_OUTPUT_PATH "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/results")
+-set(LIBRARY_OUTPUT_PATH "/builds/workspace/Pharo-vm-unix-sources/cog/results")
 +set(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/../results")
  target_link_libraries(vm-display-null ${LINKLIBS})
  set_target_properties(vm-display-null PROPERTIES PREFIX "" SUFFIX "" 
@@ -66,7 +66,7 @@ Subject: Fix use of absolute paths in cmake files
  include_directories(${crossDir}/plugins/FilePlugin)
  include_directories(${targetPlatform}/plugins/B3DAcceleratorPlugin)
  include_directories(${crossDir}/plugins/B3DAcceleratorPlugin)
--set(LIBRARY_OUTPUT_PATH "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/results")
+-set(LIBRARY_OUTPUT_PATH "/builds/workspace/Pharo-vm-unix-sources/cog/results")
 +set(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/../results")
  target_link_libraries(vm-sound-ALSA ${LINKLIBS})
  set_target_properties(vm-sound-ALSA PROPERTIES PREFIX "" SUFFIX "" 
@@ -77,7 +77,7 @@ Subject: Fix use of absolute paths in cmake files
  include_directories(${crossDir}/plugins/FilePlugin)
  include_directories(${targetPlatform}/plugins/B3DAcceleratorPlugin)
  include_directories(${crossDir}/plugins/B3DAcceleratorPlugin)
--set(LIBRARY_OUTPUT_PATH "/builds/workspace/PharoVM/Architecture/32/Slave/vm-builder-linux/cog/results")
+-set(LIBRARY_OUTPUT_PATH "/builds/workspace/Pharo-vm-unix-sources/cog/results")
 +set(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/../results")
  target_link_libraries(vm-sound-null ${LINKLIBS})
  set_target_properties(vm-sound-null PROPERTIES PREFIX "" SUFFIX "" 
