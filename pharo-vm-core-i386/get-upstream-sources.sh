@@ -4,7 +4,7 @@ set -e
 
 PACKAGE_NAME=pharo-vm-core-i386
 
-VM_SOURCES_URL='https://ci.inria.fr/pharo/job/PharoVM/Architecture=32,Slave=vm-builder-linux/lastSuccessfulBuild/artifact/sources.tar.gz'
+VM_SOURCES_URL='http://files.pharo.org/vm/src/vm-unix-sources/blessed/pharo-vm-2014.09.20.tar.bz2'
 
 function download_sources() {
     echo "Download sources from ci.inria.fr"
