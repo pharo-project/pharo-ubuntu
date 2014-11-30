@@ -8,16 +8,16 @@ VM_SOURCES_URL='http://files.pharo.org/vm/src/vm-unix-sources/blessed/pharo-vm-2
 
 function download_sources() {
     echo "Download sources from ci.inria.fr"
-    rm -f sources.tar.gz
-    wget "${VM_SOURCES_URL}" -O sources.tar.gz
+    rm -f sources.tar.bz2
+    wget "${VM_SOURCES_URL}" -O sources.tar.bz2
 }
 
 function extract_sources() {
-    echo "Extract sources.tar.gz to cog/"
+    echo "Extract sources.tar.bz2 to cog/"
     rm -rf cog
     mkdir cog
     cd cog
-    tar xfz ../sources.tar.gz
+    tar xfj ../sources.tar.bz2 --strip-components=1
     cd ..
 }
 
@@ -33,7 +33,7 @@ function wrong_vm_version_format() {
 function source_package_already_present() {
     vm_version="$1"
     echo "Checking if source package is already there"
-    test -f ${PACKAGE_NAME}_${vm_version}.orig.tar.gz
+    test -f ${PACKAGE_NAME}_${vm_version}.orig.tar.bz2
     return $?
 }
 
@@ -55,7 +55,7 @@ function create_source_package() {
     echo "Create upstream tarball"
     rm -rf ${PACKAGE_NAME}-${vm_version}
     mv cog ${PACKAGE_NAME}-${vm_version}
-    tar cfz ${PACKAGE_NAME}_${vm_version}.orig.tar.gz ${PACKAGE_NAME}-${vm_version}
+    tar cfz ${PACKAGE_NAME}_${vm_version}.orig.tar.bz2 ${PACKAGE_NAME}-${vm_version}
 }
 
 download_sources
